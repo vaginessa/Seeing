@@ -48,6 +48,8 @@ ext {
     markdownVersion = '1.1.0'
     leakcanaryVersion = '1.4-beta2'
     eventbusVersion = '3.0.0'
+    injectVersion = '1'
+    annotationVersion = '1.2'
 
     supportDependencies = [
             appcompatV7:"com.android.support:appcompat-v7:$supportLibraryVersion",
@@ -62,7 +64,9 @@ ext {
             daggerAnnotation:"com.google.dagger:dagger-compiler:$daggerVersion",
             greenDao:"org.greenrobot:greendao:$greenDaoVersion",
             greenDaoGenerator:"org.greenrobot:greendao-generator:$greenDaoGeneratorVersion",
-            eventbus:"org.greenrobot:eventbus:$eventbusVersion"
+            eventbus:"org.greenrobot:eventbus:$eventbusVersion",
+            inject:"javax.inject:javax.inject:$injectVersion",
+            annotation:"javax.annotation:javax.annotation-api:$annotationVersion"
     ]
 
     appTestDependencies = [

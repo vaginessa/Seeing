@@ -94,6 +94,8 @@ dependencies {
     compile appDependencies.dagger
     compile appDependencies.greenDao
     compile appDependencies.eventbus
+    compile appDependencies.inject
+    compile appDependencies.annotation
 
     androidTestCompile(appTestDependencies.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
