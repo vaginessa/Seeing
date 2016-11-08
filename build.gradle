@@ -1,0 +1,77 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+    // app
+    applicationId = 'com.sye.seeing'
+    versionCode = 1000
+    versionName = '1.0.0.0'
+
+    // Sdk and tools
+    minSdkVersion = 22
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.3'
+
+    // App dependencies
+    supportLibraryVersion = '24.2.1'
+    junitVersion = '4.12'
+    espressoVersion = '2.2.2'
+
+    //other dependencies
+    daggerVersion = '2.0.2'
+    butterknifeVersion = '7.0.1'
+    greenDaoVersion = '2.2.1'
+    greenDaoGeneratorVersion = '2.2.0'
+    markdownVersion = '1.1.0'
+    leakcanaryVersion = '1.4-beta2'
+    eventbusVersion = '3.0.0'
+
+    supportDependencies = [
+            appcompatV7:"com.android.support:appcompat-v7:$supportLibraryVersion",
+            supportV4:"com.android.support:support-v4:$supportLibraryVersion",
+            design:"com.android.support:design:$supportLibraryVersion",
+            cardviewV7:"com.android.support:cardview-v7:$supportLibraryVersion"
+    ]
+
+    appDependencies = [
+            butterknife:"com.jakewharton:butterknife:$butterknifeVersion",
+            dagger:"com.google.dagger:dagger:$daggerVersion",
+            daggerAnnotation:"com.google.dagger:dagger-compiler:$daggerVersion",
+            greenDao:"org.greenrobot:greendao:$greenDaoVersion",
+            greenDaoGenerator:"org.greenrobot:greendao-generator:$greenDaoGeneratorVersion",
+            eventbus:"org.greenrobot:eventbus:$eventbusVersion"
+    ]
+
+    appTestDependencies = [
+            junit:"junit:junit:$junitVersion",
+            espresso:"com.android.support.test.espresso:espresso-core:$espressoVersion"
+    ]
+
+    appOOMTestDependencies = [
+            leakcanary:"com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion",
+            leakcanaryOp:"com.squareup.leakcanary:leakcanary-android-no-op:$leakcanaryVersion"
+    ]
+}

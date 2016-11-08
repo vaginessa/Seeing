@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        jackOptions {//使用jack工具链编译
+            enabled true
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+                srcDir 'src/main/java-gen'
+            }
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            // Show Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            // Disable ACRA
+            buildConfigField "boolean", "ACRA_ENABLED", "false"
+            shrinkResources false
+        }
+        release {
+            // Not show Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // Disable ACRA
+            buildConfigField "boolean", "ACRA_ENABLED", "false"
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Remove release app name
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def file = output.outputFile
+            def fileName = file.name.replace(file.name, "Seeing" + "_V" + variant.versionName + ".apk")
+            output.outputFile = new File(file.parentFile, fileName)
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/XXX'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        incremental true //增量编译
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    def supportDependencies = rootProject.ext.supportDependencies
+    def appDependencies = rootProject.ext.appDependencies
+    def appTestDependencies = rootProject.ext.appTestDependencies
+    def appOOMTestDependencies = rootProject.ext.appOOMTestDependencies
+
+    annotationProcessor appDependencies.daggerAnnotation
+    testCompile appTestDependencies.junit
+    //testCompile appOOMTestDependencies.leakcanaryOp
+    //releaseCompile appOOMTestDependencies.leakcanaryOp
+    //debugCompile appOOMTestDependencies.leakcanary
+    compile supportDependencies.appcompatV7
+    compile supportDependencies.supportV4
+    compile supportDependencies.design
+    compile supportDependencies.cardviewV7
+    compile appDependencies.butterknife
+    compile appDependencies.dagger
+    compile appDependencies.greenDao
+    compile appDependencies.eventbus
+
+    androidTestCompile(appTestDependencies.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}
