@@ -5,6 +5,7 @@ import android.content.Context;
 import com.sye.seeing.App;
 import com.sye.seeing.dagger2.ContextType;
 import com.sye.seeing.dagger2.module.AppModule;
+import com.sye.seeing.dao.DaoSession;
 
 import javax.inject.Singleton;
 
@@ -22,4 +23,6 @@ public interface AppComponent {
 
     @ContextType("App")
     Context getApplicationContext();
+
+    DaoSession getDaoSession();
 }
