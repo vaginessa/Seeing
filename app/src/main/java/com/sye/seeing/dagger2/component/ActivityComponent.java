@@ -2,7 +2,7 @@ package com.sye.seeing.dagger2.component;
 
 import android.content.Context;
 
-import com.sye.seeing.MainActivity;
+import com.sye.seeing.ui.MainActivity;
 import com.sye.seeing.dagger2.Activity;
 import com.sye.seeing.dagger2.ContextType;
 import com.sye.seeing.dagger2.module.ActivityModule;

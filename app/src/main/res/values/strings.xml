@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Seeing</string>
+
+
+
+    <string name="before_hour" formatted="false">%d\u0020 hours ago</string>
+    <string name="before_day" formatted="false">%d\u0020 days ago</string>
+    <string name="before_month" formatted="false">%d\u0020 months ago</string>
+    <string name="before_year" formatted="false">%d\u0020 years ago</string>
+    <string name="just_now">Just now</string>
+    <string name="before_half_hour">A half of hour ago</string>
 </resources>

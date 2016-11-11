@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+
+    <array name="tools_drawables">
+        <item>@drawable/ic_title_h1</item>
+        <item>@drawable/ic_title_h2</item>
+        <item>@drawable/ic_title_h3</item>
+        <item>@drawable/ic_title_h4</item>
+        <item>@drawable/ic_title_h5</item>
+        <item>@drawable/ic_title_h6</item>
+        <item>@drawable/ic_bold</item>
+        <item>@drawable/ic_italic</item>
+        <item>@drawable/ic_photo</item>
+        <item>@drawable/ic_quote</item>
+        <item>@drawable/ic_code_white</item>
+        <item>@drawable/ic_link</item>
+        <item>@drawable/ic_list_bulleted</item>
+        <item>@drawable/ic_list_numbered</item>
+        <item>@drawable/ic_code</item>
+        <item>@drawable/ic_strikethrough</item>
+        <item>@drawable/ic_divider</item>
+        <item>@drawable/ic_grid</item>
+    </array>
+
+    <string-array name="tools_action">
+        <item>"\n# "</item>
+        <item>"\n## "</item>
+        <item>"\n### "</item>
+        <item>"\n#### "</item>
+        <item>"\n##### "</item>
+        <item>"\n###### "</item>
+        <item>"** **"</item>
+        <item>"* *"</item>
+        <item>"\n![image]()"</item>
+        <item>"\n> "</item>
+        <item>"\n` `"</item>
+        <item>"[]()"</item>
+        <item>"\n* "</item>
+        <item>"\n1. "</item>
+        <item>"\n```\n\n```"</item>
+        <item>"~~ ~~"</item>
+        <item>"\n_______\n"</item>
+        <item>"grid"</item>
+    </string-array>
+
+    <string-array name="tools_action_names">
+        <item>"H1"</item>
+        <item>"H2"</item>
+        <item>"H3"</item>
+        <item>"H4"</item>
+        <item>"H5"</item>
+        <item>"H6"</item>
+        <item>"BOLD"</item>
+        <item>"ITALIC"</item>
+        <item>"IMAGE"</item>
+        <item>"QUOTE"</item>
+        <item>"INLINE CODE"</item>
+        <item>"LINK"</item>
+        <item>"LIST UNORDERED"</item>
+        <item>"LIST ORDERED"</item>
+        <item>"BLOCK CODE"</item>
+        <item>"STRIKE THROUGH"</item>
+        <item>"DIVIDER"</item>
+        <item>"TABLE"</item>
+    </string-array>
+</resources>
