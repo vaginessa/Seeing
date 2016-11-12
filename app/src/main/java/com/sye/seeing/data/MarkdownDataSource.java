@@ -13,13 +13,13 @@ import java.util.List;
 
 public interface MarkdownDataSource {
     interface LoadMarkdownCallback {
-        void onMarkdownLoaded(Markdown note);
+        void onMarkdownLoaded(Markdown markdown);
 
         void onLoadError();
     }
 
     interface ObtainMarkdownCallback {
-        void onMarkdownObtained(List<Markdown> notes);
+        void onMarkdownObtained(List<Markdown> markdowns);
 
         void onObtainError();
     }
